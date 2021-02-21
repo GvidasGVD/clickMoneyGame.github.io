@@ -1,2 +1,2 @@
 # clickMoneyGame.github.io
-Click game
+Simple click game created using HTML, CSS and JS.
