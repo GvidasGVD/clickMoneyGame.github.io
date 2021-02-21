@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+   <!--  A <meta> viewport element gives the browser instructions on how to control the page's dimensions and scaling. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The X-UA-Compatible meta tag allows web authors to choose what version of Internet Explorer the page should be rendered as. Edge mode tells Internet Explorer to display content in the highest mode available. -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Document</title>
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js" defer></script>
+</head>
+
+<body>
+    <div class='dialogBg'>
+        <div class='dialog noselect'>
+            <h3>Taxes!!</h3>
+            <span id='taxComponent'></span>
+            <p>Whould you like to continue the game?</p>
+            <button onclick="procedeTheGame();" class='noselect'>YES</button>
+            <button onclick='endTheGame();' class='noselect'>NO</button>
+        </div>
+    </div>
+    <div class='endGameCover'>
+        <div class='playersEndScore centered'>
+            <span>You owned: 
+            	<br> <span id='kiosksOwnedFinal'></span> kiosk(s), 
+            	<br> <span id='shopsOwnedFinal'>0</span> shop(s), 
+            	<br> <span id='banksOwnedFinal'>0</span> bank(s)</span>
+            <h3>Thank You for the Game!!!</h3>
+            <button onclick="window.location.reload();" class='playAgainBtn'>Play Again</button>
+        </div>
+    </div>
+    <div class='lostGameCover'>
+        <div class='playersEndScore centered'>
+        	<br>
+        	<h3> You have less than $-5000...</h3>
+            <span>You owned: <span id='kiosksOwnedFinal'></span> kiosk(s), <span id='shopsOwnedFinal'>0</span>
+                shop(s)
+                and <span id='banksOwnedFinal'>0</span> bank(s)</span>
+            <h3>You have lost the game. Try Again :)</h3>
+            <button onclick="window.location.reload();" class='playAgainBtn'>Play Again</button>
+        </div>
+    </div>
+ <!--  Game play -->
+    <div class='container' id='mainArea'>
+        <div id='gameStartContainer'>
+            <div class='difficultyContainer'>
+                <span class='playerGreeting'>Hello Player!!</span>
+                <span>Attention! If your Cash drops to $-5000 - You Lose!!</span>
+                <span> Before You Start, Please Select Difficulty Level:</span>
+                <div>
+                    <input type="radio" name="level" value="1" checked="checked"> <span class='difficultyLevelText'>Easy</span>
+                    <input type="radio" name="level" value="2"> <span class='difficultyLevelText'>Medium </span>
+                    <input type="radio" name="level" value="3"> <span class='difficultyLevelText'>Hard </span>
+                </div>
+            </div>
+            <button onclick="startTheGame();">START!</button>
+        </div>
+        <div id='gamesField'>
+            <h2>Build Your Own Portfolio</h2>
+            <div class='playersBox'>
+                <ul class='flex centered'>
+                    <li><img src='images/kiosk.PNG'><span class='kiosksOwned'>0</span></li>
+                    <li><img src='images/shop.PNG'><span class='shopsOwned'>0</span></li>
+                    <li><img src='images/bank.PNG'><span class='banksOwned'>0</span></li>
+                    <li>Every second profit<span class='everySecondProfit'>$0</span>
+                    <li>Income from the beginning<span class='fromBeginningProfit'>$0</span></li>
+                </ul>
+            </div>
+            <div class='flex gameArea'>
+                <div class='purchaseBox'>
+                    <div class='kiosk'>
+                        <span class='purchase'>KIOSK</span>
+                        <span class='price'>$100</span>
+                        <img src='images/kiosk.PNG' class='purchaseImg noselect'>
+                    </div>
+                    <div class='shop'>
+                        <span class='purchase'>SHOP</span>
+                        <span class='price'>$200</span>
+                        <img src='images/shop.PNG' class='purchaseImg noselect'>
+                    </div>
+                    <div class='bank'>
+                        <span class='purchase'>BANK</span>
+                        <span class='price'>$5,000</span>
+                        <img src='images/bank.PNG' class='purchaseImg noselect'>
+                    </div>
+                </div>
+                <div class='cashButton noselect'>$0</div>
+                <div class='wealthyPeople'>
+                    <div class='wealthyPeopleBackground'>
+                        <div id='horizontalLine' class='noselect'>Your cash</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
