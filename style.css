@@ -26,7 +26,8 @@ h2, h3, span, p, li, .noselect {
     background-size: cover;
 }
 
-.dialogBg {
+.dialogBg,
+.smallerScreensModal {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -47,7 +48,8 @@ h2, h3, span, p, li, .noselect {
     backdrop-filter: blur(20px);
 }
 
-.dialogBg .dialog {
+.dialogBg .dialog,
+.smallerScreensModal .dialog{
     background-color: rgba(255, 255, 255, 0.623);
     border-radius: 5px;
     padding: 50px;
@@ -99,6 +101,7 @@ h2, h3, span, p, li, .noselect {
     z-index: 2;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 5px 5px grey;
 }
 
 .lostGameCover {
@@ -116,6 +119,7 @@ h2, h3, span, p, li, .noselect {
     background-color: rgba(48, 47, 47, 0.678); 
     background-blend-mode: darken;
     background-repeat: no-repeat;
+    box-shadow: 0 0 5px 5px grey;
 }
 
 .playersEndScore span {
@@ -317,7 +321,12 @@ ul li span {
 .cashButton:hover {
     opacity: 1;
     border: 2px solid yellow;
+    width: 40%;
+}
 
+.cashButton:active {
+    color: green;
+    border: 5px solid green;
 }
 
 .purchaseImg {
@@ -330,6 +339,10 @@ ul li span {
 .purchaseImg:hover {
     opacity: 1;
     border: 1px solid rgba(240, 39, 39, 0.527);
+}
+
+.purchaseImg:active {
+    border: 2px solid green;
 }
 
 .wealthyPeople {
