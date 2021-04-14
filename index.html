@@ -14,31 +14,35 @@
     <meta name="image" property="og:image" content="https://gvidasgvd.github.io/clickMoneyGame.github.io/images/gameImage.JPG" />
     <meta name="author" content="Gvidas Pilelis" />
     
-    <title>Document</title>
-
+    <title>Click Game</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon.png">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js" defer></script>
 </head>
 
 <body>
+    <div class='smallerScreensModal'>
+        <div class='noselect'>
+            <h3 style="color:white">We are sorry, but the game is not adapted to smaller screens </h3>
+        </div>
+    </div>
     <div class='dialogBg'>
         <div class='dialog noselect'>
             <h3>Taxes!!</h3>
             <span id='taxComponent'></span>
             <p>Whould you like to continue the game?</p>
-            <button onclick="procedeTheGame();" class='noselect'>YES</button>
-            <button onclick='endTheGame();' class='noselect'>NO</button>
+            <button id="proceedGameBtn" class='noselect'>YES</button>
+            <button id="endGameBtn" class='noselect'>NO</button>
         </div>
     </div>
     <div class='endGameCover'>
         <div class='playersEndScore centered'>
             <span>You owned: 
-            	<br> <span id='kiosksOwnedFinal'></span> kiosk(s), 
-            	<br> <span id='shopsOwnedFinal'>0</span> shop(s), 
-            	<br> <span id='banksOwnedFinal'>0</span> bank(s)</span>
+            	<br> <span class='kiosksOwnedFinal'>0</span>, <span class='shopsOwnedFinal'>0</span>, 
+            	<span class='banksOwnedFinal'>0</span></span>
             <h3>Thank You for the Game!!!</h3>
             <button onclick="window.location.reload();" class='playAgainBtn'>Play Again</button>
         </div>
@@ -47,9 +51,8 @@
         <div class='playersEndScore centered'>
         	<br>
         	<h3> You have less than $-5000...</h3>
-            <span>You owned: <span id='kiosksOwnedFinal'></span> kiosk(s), <span id='shopsOwnedFinal'>0</span>
-                shop(s)
-                and <span id='banksOwnedFinal'>0</span> bank(s)</span>
+            <span>You owned: <span class='kiosksOwnedFinal'>0</span>, <span class='shopsOwnedFinal'>0</span>
+                and <span class='banksOwnedFinal'>0</span></span>
             <h3>You have lost the game. Try Again :)</h3>
             <button onclick="window.location.reload();" class='playAgainBtn'>Play Again</button>
         </div>
@@ -67,7 +70,7 @@
                     <input type="radio" name="level" value="3"> <span class='difficultyLevelText'>Hard </span>
                 </div>
             </div>
-            <button onclick="startTheGame();">START!</button>
+            <button id="startGameBtn" >START!</button>
         </div>
         <div id='gamesField'>
             <h2>Build Your Own Portfolio</h2>
