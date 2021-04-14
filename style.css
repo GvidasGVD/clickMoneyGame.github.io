@@ -59,6 +59,16 @@ h2, h3, span, p, li, .noselect {
     text-align: center;
 }
 
+.smallerScreenModalContent {
+    background-color:rgba(255, 235, 205, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.smallerScreenModalContent h3 {
+    text-shadow: 0 1px 3px white;
+}
+
 .dialogBg .dialog h3 {
     font-size: 42px;
     margin-bottom: 30px;
